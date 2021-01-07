@@ -1,0 +1,16 @@
+--SUM = Rtoena a soma total das coluinas, no caso abaixo ele retorna a soma dos 10 primeiros resultados da coluna linetotal
+SELECT TOP 10 SUM(linetotal) AS 'Soma'
+FROM sales.salesorderdetail;
+
+--MAX = Encontra o valor maximo de uma coluna
+SELECT TOP 10 MAX(linetotal) AS 'Valor Máximo'
+FROM sales.salesorderdetail;
+
+--MIN = Encontra o menor valor de uma coluna
+SELECT TOP 10 MIN(linetotal) AS 'Valor Mínimo'
+FROM sales.salesorderdetail;
+
+
+--AVG = Faz a média de todos os valores da coluna
+SELECT TOP 10 AVG(linetotal) AS 'Média'
+FROM sales.salesorderdetail;

@@ -1,0 +1,33 @@
+--Having seria um tipo de Where para o Group By, sua diferença com o Wherw é que ele roda depois que os dados foram agrupados, ele pode usar 
+--comandos de agregação, enquanto o Where não pode. Ele filtra dados agrupados
+
+--Quero saber a quantidade em estoque e a média de todos os produtos, que tenha no estoque + de 10000 deles
+SELECT name as 'Nome', production.workorder.ProductId AS 'ID', SUM(StockedQty) AS 'Total', AVG(StockedQty) AS 'Média'
+FROM production.workorder, production.product
+WHERE production.workorder.ProductId = production.product.ProductId
+GROUP BY production.workorder.ProductId, name
+HAVING SUM(StockedQty) > 10000
+ORDER BY name ASC;
+
+
+--Selecione os nomes no sistema com mais de 10 ocorrências somente onde o título é Mr
+SELECT FirstName, Title, COUNT(FirstName) AS 'Total'
+FROM person.person
+WHERE Title = 'Mr.'
+GROUP BY FirstName, title
+HAVING COUNT(FirstName) > 10;
+
+
+--Selecione todas as províncias com mias de 1000 ocorrências
+SELECT StateProvinceID, SUM(StateProvinceID) AS 'Total'
+FROM person.address
+GROUP BY StateProvinceID
+HAVING SUM(StateProvinceID) > 1000
+ORDER BY StateProvinceID ASC;
+
+
+--Seleceione todos os produtos que tiveram uma média de vendas menor que 1000000
+SELECT ProductID, AVG(LineTotal) AS 'Venda'
+FROM  sales.salesorderdetail
+GROUP BY ProductID
+HAVING AVG(LineTotal) < 1000000;

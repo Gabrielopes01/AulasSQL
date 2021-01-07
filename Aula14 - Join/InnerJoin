@@ -1,0 +1,25 @@
+--JOIN juntas e mescla valores de duas tabelas com chave primária e estrangeira
+--Neste caso pegue o email e o nome das pessoas cadastradas
+SELECT TOP 10 P.BusinessEntityID AS 'ID', P.FirstName AS 'Nome', P.LastName AS 'Sobrenome', E.EmailAddress as 'Email'
+FROM person.person P
+INNER JOIN person.emailaddress E
+ON E.BusinessEntityID = P.BusinessEntityID;
+
+
+--Retorne os produtos com sua subcategoria
+SELECT P.name AS 'Nome', P.listPrice AS 'Preço', S.name AS 'Subcategoria'
+FROM production.product P
+INNER JOIN production.productsubcategory S ON S.ProductSubcategoryID = P.ProductSubcategoryID;
+
+
+--Traga a informação mesclada de BusinessId e de Address
+SELECT TOP 10 *
+FROM person.businessentityaddress BA
+INNER JOIN person.address A
+ON BA.AddressId = A.AddressId;
+
+
+--Selecione o telefone e o tipo do telefone
+SELECT PP.BusinessEntityID AS 'ID', PT.name AS 'Tipo', PP.PhoneNumber 'Número'
+FROM person.personphone PP
+INNER JOIN person.phonenumbertype PT ON PT.PhoneNumberTypeID = PP.PhoneNumberTypeID;

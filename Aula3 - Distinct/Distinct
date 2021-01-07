@@ -1,0 +1,6 @@
+SELECT FirstName FROM Person.Person;
+# Seleciona algo distintasmente, ou seja, remove as repetições do Select
+SELECT DISTINCT FirstName FROM Person.Person;
+
+#Desafio - Quantos nomes distintos existem
+SELECT DISTINCT LastName FROM Person.Person;

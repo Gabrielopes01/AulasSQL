@@ -1,0 +1,33 @@
+-- Função Dateaprt - Função para datas na onde você escolhe o dado que vai sair e a data na seguinte função - DATEPART ( datepart , date )
+--Selecionando o mâs em que o pedido foi feito
+SELECT SalesOrderId, DATEPART(month,OrderDate) AS 'Mês'
+FROM sales.salesorderheader;
+
+--Selecionando o ano em que o pedido foi feito
+SELECT SalesOrderId, DATEPART(year,OrderDate) AS 'Ano'
+FROM sales.salesorderheader;
+
+--Selecionando o dia em que o pedidio foi feito
+SELECT SalesOrderId, DATEPART(day,OrderDate) AS 'Dia'
+FROM sales.salesorderheader
+ORDER BY DIA ASC;
+
+
+--Media de valor devido por mes
+SELECT DATEPART(month, OrderDate) AS 'Mês', AVG(TotalDue)
+FROM sales.salesorderheader
+GROUP BY DATEPART(month, OrderDate)
+ORDER BY Mês ASC;
+
+--Selecione os nomes e os meses modificados das pessoas que tenham modificado depois do mes 5
+SELECT FIRSTNAME, LASTNAME, DATEPART(MONTH,MODIFIEDDATE) AS 'MES'
+FROM PERSON.PERSON
+WHERE DATEPART(MONTH,MODIFIEDDATE) > 5
+ORDER BY MES;
+
+--Selecione o total de vnendas mensal do ano de 2011
+SELECT SUM(LineTotal) AS 'Total Mensal Ano 2011', DATEPART(month,ModifiedDate) AS 'MES'
+FROM sales.salesorderdetail
+WHERE DATEPART(year,ModifiedDate) = '2011'
+GROUP BY DATEPART(month,ModifiedDate)
+ORDER BY MES;

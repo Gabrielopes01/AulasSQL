@@ -1,0 +1,11 @@
+-- As serve para enomear as colunas e dar apelidos para poder usar nomes diferentes, como o exemplo abaixo em que mudamos o nome do ListPrice
+SELECT ListPrice AS 'Preço Total'
+FROM production.product;
+
+--Econtrar o FirstName e LastName e trazer em Portugues
+SELECT FirstName AS 'Nome', LastName AS 'Sobrenome'
+FROM person.person;
+
+--Trga o product number em portugues
+SELECT ProductNumber AS 'Numero do Produto'
+FROM production.product;

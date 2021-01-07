@@ -1,0 +1,7 @@
+--LEFT OUTER JOIN + LEFT JOIN
+--Retorne as pessoas que não tem cartão de crédito
+SELECT *
+FROM person.person PP
+LEFT JOIN sales.personcreditcard PC
+ON PP.BusinessEntityID = PC.BusinessEntityID
+WHERE PC.BusinessEntityID IS NULL;

@@ -1,0 +1,17 @@
+-- Conta o número de linhas presentes em uma tabela
+SELECT COUNT(*) AS 'Total'
+FROM Person.Person;
+
+
+--Pode contar algo específico, como uma coluna apenas, mas nunca conta os NULL
+SELECT COUNT(title) AS 'Total'
+FROM Person.Person;
+--Tem menos resultados pois ele ignora o NULL
+
+--Desafio - Selecione o toal de produtos
+SELECT COUNT(*) AS 'TOTAL'
+FROM production.Product;
+
+--Desafio - Selecione o total de pesos na tabela produtos
+SELECT COUNT(size) AS 'TOTAL'
+FROM production.Product;

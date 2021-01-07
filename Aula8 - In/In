@@ -1,0 +1,7 @@
+--Selecionando os 5 primeiro resultados cujo o ID não seja 1, 2 ou 3, o IN serve para dizer que o valor deve condizer com algum dos valores dentro dos parentes
+SELECT TOP 5 *
+FROM production.product
+WHERE ProductID NOT IN (1,2,3);
+
+
+--Ao invés de usar varias condiço~es, use o IN

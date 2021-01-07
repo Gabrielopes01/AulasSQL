@@ -1,0 +1,28 @@
+--Union combina dois ou mais resultados de um select em um único resultado
+/*
+SELECT  C
+FROM  T
+UNION
+SELECT C2
+FROM T2
+*/
+--Resultados duplicados serão removidos, exceto se você usar o UNION ALL
+
+--Retorne os produtos com chain e decal
+SELECT PRODUCTID, NAME, PRODUCTNUMBER
+FROM PRODUCTION.PRODUCT
+WHERE NAME LIKE '%CHAIN%'
+UNION
+SELECT PRODUCTID, NAME, PRODUCTNUMBER
+FROM PRODUCTION.PRODUCT
+WHERE NAME LIKE '%DECAL%';
+
+
+--Selecione as pessoas com o titulo Mr. e nome do meio sendo "A"
+SELECT FirstName, Title
+FROM person.person
+WHERE title = 'Mr.'
+UNION
+SELECT FirstName, Title
+FROM person.person
+Where MiddleName = 'A';

@@ -1,0 +1,12 @@
+--INNER JOIN = Retorna apenas resultados correspondentes, ou seja, que sejam iguais na tabela A e na tabela B
+INNER JOIN tabela ON id=id
+
+--FULL OUTER JOIN = Retorna todos os registros da tabela A e B, sejam iguais ou não, preenchendo os que não tem valor com NULL
+FULL OUTER JOIN tabela ON id=id
+
+--LEFT JOIN = Retorna todos os registros de A, tanto os únicos quanto os iguais a B
+LEFT JOIN tabela ON id=id
+
+--RIGHT JOIN = Retorna todos os registros de B, tanto os únicos quanto os iguais a A
+RIGHT JOIN tabela ON id=id
+

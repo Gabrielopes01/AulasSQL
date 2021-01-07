@@ -1,0 +1,47 @@
+--O Group By serve para agrupar uma coluna junto com uma função agregada como soma, no caso abaixo queremos ver quantas ofertas especiais
+--existem e qual o valor total delas
+SELECT SpecialOfferID, SUM(UnitPrice) as 'SOMA'
+FROM sales.salesorderdetail
+GROUP BY SpecialOfferID;
+
+
+--Precisamos saber quantos de cada produto foi vendido
+SELECT name, sales.salesorderdetail.ProductID, SUM(OrderQty) AS 'Quantidade'
+FROM sales.salesorderdetail, production.product
+WHERE sales.salesorderdetail.ProductID = production.product.ProductID
+GROUP BY sales.salesorderdetail.ProductID, name;
+
+
+--Precisamos saber quantos de cada nome existe no banco
+SELECT FirstName, COUNT(FirstName) AS 'Quantidade'
+FROM person.person
+GROUP BY FirstName;
+
+
+--Queremos saber a media de preço dos produtos de prata
+SELECT color, AVG(listprice) AS 'Média'
+FROM production.product
+WHERE color = 'Silver'
+GROUP BY color;
+
+
+--Quantas pessoas tem o mesmo Nome do Meio
+SELECT MiddleName, COUNT(MiddleName) AS 'Total'
+FROM person.person
+GROUP BY MiddleName;
+
+
+--Qual é a média de venda de cada produto?
+SELECT name, sales.salesorderdetail.ProductId, AVG(OrderQty)
+FROM sales.salesorderdetail, production.product
+WHERE sales.salesorderdetail.ProductId = production.product.ProductId
+GROUP BY sales.salesorderdetail.ProductID, name
+ORDER BY ProductID;
+
+
+--Qual a quantidade e a media de produtos no estoque?
+SELECT name as 'Nome', production.workorder.ProductId AS 'ID', SUM(StockedQty) AS 'Total', AVG(StockedQty) AS 'Média'
+FROM production.workorder, production.product
+WHERE production.workorder.ProductId = production.product.ProductId
+GROUP BY production.workorder.ProductId, name
+ORDER BY name ASC;

@@ -1,0 +1,20 @@
+--Achando um valor que inicie com a letra P
+SELECT *
+FROM person.person
+WHERE FirstName LIKE 'P%';
+
+
+--Achando um valor que termine com a letra A
+SELECT *
+FROM person.person
+WHERE FirstName LIKE '%A';
+
+--Achando um valor que possua AB em qualquer lugar da palavra
+SELECT *
+FROM person.person
+WHERE FirstName LIKE '%AB%';
+
+--Achando um valor que possua AB em qualquer lugar da palavra e se limite a 1 letra após o B
+SELECT *
+FROM person.person
+WHERE FirstName LIKE '%AB_';

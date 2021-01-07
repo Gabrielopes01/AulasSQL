@@ -1,0 +1,25 @@
+--CONCAT(V1, V2, V3...) = Concatena os valores inseridos
+--Selecionando o nome compelto
+SELECT CONCAT(FirstName, ' ', MiddleName, ' ', LastName) AS 'Nome Completo'
+FROM person.person;
+
+--UPPER(V) = Deixa o valor inserido maiusculo
+SELECT UPPER(CONCAT(FirstName, ' ', MiddleName, ' ', LastName)) AS 'Nome Completo Maiusculo'
+FROM person.person;
+
+--LOWER(V) = Deixa o valor inserido minusculo
+SELECT LOWER(CONCAT(FirstName, ' ', MiddleName, ' ', LastName)) AS 'Nome Completo Minusculo'
+FROM person.person;
+
+--LEN(V) = Conta quanto caracteres o valor inserido tem
+SELECT CONCAT(FirstName, ' ', MiddleName, ' ', LastName) AS 'Nome Completo', LEN(CONCAT(FirstName, ' ', MiddleName, ' ', LastName)) AS 'Numero de Caracteres'
+FROM person.person;
+
+--SUBSTRING(V,X,Y) = Extrai os caracteres de um ponto inicial (X) a um ponto final (Y), todos os argumentos são obrigatorios
+SELECT FirstName AS 'Nome', SUBSTRING(FirstName, 1, 3) AS 'Primeiras 3 Letras'
+FROM person.person;
+
+--REPLACE(Coluna, Valor, Reposição) Substitui algo de uma string por outra coisa
+--Rpondo os caracteres A por @
+SELECT LastName, REPLACE(LastName, 'A', '@') AS 'Nomes @'
+FROM person.person;

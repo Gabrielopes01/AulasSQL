@@ -1,0 +1,43 @@
+--Comentário
+--Sempre use aspas simples
+
+
+--Seleciona todas as pessoas com o LastName Miller
+SELECT *
+FROM Person.Person
+WHERE LastName = 'Miller';
+
+
+--Seleciona todos os produtos com a cor vermelha ou azul
+SELECT *
+FROM production.Product
+WHERE color = 'blue' OR color = 'RED';
+
+
+--Seleciona todos os produtos que tenham cores diferentes de vermelho
+SELECT *
+FROM production.Product
+WHERE color != 'red';
+
+
+--Desafio - Selecione todos os produtos que tenham pesso maior que 500 e menor que 700
+SELECT *
+FROM production.Product
+WHERE weight > 500 AND weight < 700;
+
+
+--Desafio - Selecione os funcionários que são casados e assalariados
+SELECT *
+FROM HumanResources.Employee
+WHERE MaritalStatus = 'M' AND SalariedFlag = 1;
+
+
+--Desafio - Selecio o Peter Krebs e seu Email
+#Achando o ID
+SELECT *
+FROM Person.Person
+WHERE FirstName = 'Peter' AND LastName = 'Krebs';
+#Achando o Email pelo ID
+SELECT EmailAddress
+FROM person.emailaddress
+WHERE BusinessEntityID = 26;

@@ -1,0 +1,10 @@
+#Comando SQL por convenção é sempre maiúsculo
+
+#Seleciona todos os valores da tabela Person
+SELECT * FROM Person.Person;
+
+#Seleciona apenas uma ou mais colunas da tabela Person
+SELECT Title FROM Person.Person;
+
+#Desafio - Selecionar diversas colunas
+SELECT FirstName, LastName FROM Person.Person;

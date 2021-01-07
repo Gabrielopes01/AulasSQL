@@ -1,0 +1,10 @@
+--Seleciona todos os valores entre os outros dois valores indicados
+SELECT *
+FROM production.product
+WHERE ListPrice BETWEEN 1000 AND 1500;
+
+
+--Se usar um prefixo NOT, ele seleciona quais não estão entre
+SELECT *
+FROM production.product
+WHERE ListPrice NOT BETWEEN 1000 AND 1500;
