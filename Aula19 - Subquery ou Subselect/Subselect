@@ -1,0 +1,25 @@
+--Subselect = Um Select dentro de um selec, pode ser usado para adquirir uma consulta com uma função de agragação dentro do Where
+--Verifica quais produtos tem o preço base maior que a média dos preços totais
+SELECT ProductID, ListPrice As 'Preço Superior'
+FROM production.product
+WHERE Listprice > (SELECT AVG(ListPrice) FROM production.product)
+ORDER BY ListPrice ASC;
+
+
+--Verificando se há um produto na tabela order que tenha sido vendido mais de 2 unidades
+SELECT ProductID, name AS 'Nome', ListPrice As 'Preço'
+FROM production.product
+WHERE ProductID IN (SELECT ProductID FROM sales.salesorderdetail WHERE OrderQty > 2)
+ORDER BY ProductID ASC;
+
+
+--Selecionando as pessoas que tem cargo Design Engineer
+SELECT CONCAT(FirstName, ' ', MiddleName, ' ', LastName) AS 'Nome'
+FROM person.person
+WHERE BusinessEntityID IN (SELECT BusinessEntityID FROM humanresources.employee WHERE JobTitle = 'Design Engineer');
+
+--Metodo Alternativo usando JOIN
+SELECT CONCAT(P.FirstName, ' ', P.MiddleName, ' ', P.LastName) AS 'Nome'
+FROM person.person P
+INNER JOIN humanresources.employee E ON E.BusinessEntityId = P.BusinessEntityId
+WHERE JobTitle = 'Design Engineer';
