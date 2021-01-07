@@ -1,0 +1,20 @@
+/*
++ = Soma
+- = Subtração
+/ = Divisão
+* = Multiplicação
+AVG = Média
+SUM = Soma Total das Linhas
+MIN = Valor Mínimo da Coluna
+MAX = Valor Máximo da Coluna
+*/
+
+--ROUND(Coluna, Numero de Casas Depois da Virgula) = Arredonda o valor
+--Arredondando o valor unitário do produto
+SELECT UnitPrice AS 'Valor', ROUND(UnitPrice, 2) AS 'Valor Arredondado'
+FROM sales.salesorderdetail;
+
+--SQRT(V) = Acha a raiz quadrada do valor
+--Achando a raiz do valor dos produtos
+SELECT UnitPrice AS 'Valor', SQRT(UnitPrice) AS 'Valor Arredondado'
+FROM sales.salesorderdetail;

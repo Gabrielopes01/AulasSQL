@@ -23,3 +23,20 @@ FROM person.person;
 --Rpondo os caracteres A por @
 SELECT LastName, REPLACE(LastName, 'A', '@') AS 'Nomes @'
 FROM person.person;
+
+--Trocando o nome Abel por @
+SELECT LastName, REPLACE(LastName, 'Abel', '@') AS 'Nomes @'
+FROM person.person;
+
+--Trocando o . por - do nome do meio
+SELECT MiddleName, REPLACE(MiddleName, '.', '-') AS 'Nomes do Meio'
+FROM person.person;
+
+
+--Desafio- Deixando a primeira letra dos nomes minusculas e as outras maiusculas
+SELECT FirstName AS 'Nome', CONCAT(LOWER(SUBSTRING(FirstName, 1, 1)), UPPER(SUBSTRING(FirstName, 2, LEN(FirstName)))) AS 'Letra'
+FROM person.person;
+
+--Trocando agora A por @
+SELECT FirstName AS 'Nome', REPLACE(CONCAT(LOWER(SUBSTRING(FirstName, 1, 1)), UPPER(SUBSTRING(FirstName, 2, LEN(FirstName)))), 'A', '@') AS 'Letra'
+FROM person.person;
