@@ -1,0 +1,53 @@
+--Restrições / Constraints do Create Table:
+
+--NOT NULL = Não permite nulos
+--UNIQUE = Faz com que os valores tenham que ser diferentes um dos outros
+--PRIMARY KEY = Une os dois acima e cria uma chave primária
+--FOREIGN KEY = Identifica uma linha em uma outra tabela
+--CHECK = Coloca uma condição específica na coluna
+--DEFAULT = Define um valor padrão diferente de NULL quando não ha nenhum valor inserido
+
+
+--Criando um BD Yotube e suas tabelas
+CREATE DATABASE YOUTUBE;
+USE YOUTUBE;
+
+CREATE TABLE Canal(
+  CanalId INT PRIMARY KEY,
+  Nome VARCHAR(150) NOT NULL,
+  ContagemInscritos INT DEFAULT 0,
+  DataCriacao DATETIME NOT NULL
+);
+
+
+CREATE TABLE VIDEO(
+  VideoId INT PRIMARY KEY,
+  Nome VARCHAR(150) NOT NULL,
+  Vizualicoes INT DEFAULT 0,
+  Likes INT DEFAULT 0,
+  Deslikes INT DEFAULT 0,
+  Duracao INT NOT NULL,
+  CanalId_FK INT,
+  FOREIGN KEY (CanalId_FK) REFERENCES Canal(CanalId)
+);
+
+
+--Criando mais tabelas de exemplo
+
+CREATE TABLE Usuarios(
+  UserId INT PRIMARY KEY,
+  Nome VARCHAR(150) NOT NULL,
+  Contas INT DEFAULT 1,
+  Email VARCHAR(150) NOT NULL,
+  CanalID_FK INT NOT NULL,
+  FOREIGN KEY (CanalID_FK) REFERENCES Canal(CanalId)
+);
+
+CREATE TABLE Comentario(
+  ComentID INT PRIMARY KEY,
+  Descr VARCHAR(500) NOT NULL,
+  DataC DATE NOT NULL,
+  CanalId_FK INT,
+  FOREIGN KEY (CanalId_FK) REFERENCES Canal(CanalId),
+  VideoId_FK INT FOREIGN KEY REFERENCES Video(VideoId)
+);

@@ -1,0 +1,16 @@
+--Update - Troca o valor de uma coluna
+--Trocando um nome na tabela aula e verificando a mudança
+
+SELECT *
+FROM aula;
+
+UPDATE Aula
+SET Nome = 'Matheus'
+WHERE Nome = 'Mateus'
+
+UPDATE Aula
+SET Id = 0
+WHERE Id = 1
+
+SELECT *
+FROM aula;

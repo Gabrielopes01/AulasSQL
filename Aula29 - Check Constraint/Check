@@ -1,0 +1,20 @@
+-- O CHECK passa uma verificação na criação da tabela
+--Neste caso queremos verificar se a idade inserida é maior ou igual a 18
+CREATE TABLE CarteiraMotorista(
+  Id INT PRIMARY KEY,
+  Nome VARCHAR(255) NOT NULL,
+  Idade INT CHECK (Idade >= 18)
+);
+
+INSERT CarteiraMotorista
+VALUES
+(1, 'Nathan', 15)
+
+INSERT CarteiraMotorista
+VALUES
+(2, 'Rafael', 21)
+
+SELECT *
+FROM CarteiraMotorista
+
+DROP TABLE CarteiraMotorista

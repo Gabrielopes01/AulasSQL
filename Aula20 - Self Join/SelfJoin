@@ -1,0 +1,23 @@
+--SELF JOIN serve para filtrar informação usando a mesma tabela, ou seja, usa um Join na própria tabela, por exemplo, ele pega o ID da propria 
+--tabela para usar, como por exemplo a relação de funcionario e superior, cada funcionario pode estar supervisionando alguem, entao tem
+--ID de funcionario e supervisor na mesma tabela, e um se relaciona com outro, ex: o funcinario 1 pode ser o supervisor do funcionario 4,
+--entao o funcionario 4 tem o ID de supervisor 4
+
+
+--Selecione  todos os clientes que moram na mesma região
+SELECT A.ContactName, B.ContactName
+FROM CUSTOMERS A, CUSTOMERS B
+WHERE A.Region = B.Region;
+
+
+--Traga o nome e a data de contrataçao de todos os funcionario que foram contratados no mesmo ano
+SELECT CONCAT(A.FirstName, ' ', A.LastName), A.HireDate, CONCAT(B.FirstName, ' ', B.LastName)
+FROM EMPLOYEES A, EMPLOYEES B
+WHERE DATEPART(year,A.HireDate) = DATEPART(year,B.HireDate);
+
+
+--Use chaves para selções de tabelas com nome com espaços - []
+--Selecione os produtos com a mesma quantidade de desconto
+SELECT A.OrderId, A.Discount, B.OrderId, B.Discount
+FROM [Order Details] A, [Order Details] B
+WHERE A.Discount = B.Discount;

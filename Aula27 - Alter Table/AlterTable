@@ -1,0 +1,54 @@
+--Criando Tabela e verificando
+CREATE TABLE YouTube(
+  Id INT PRIMARY KEY,
+  Nome VARCHAR(150) NOT NULL UNIQUE,
+  Categoria VARCHAR(200) NOT NULL,
+  DataCriacao DATETIME NOT NULL
+);
+
+SELECT *
+FROM YOUTUBE
+
+
+--ADD = Adiciona uma coluna
+ALTER TABLE YouTube
+ADD Ativo BIT   --Adicionou a coluna Ativo
+
+
+--ALTER COLUMN = Altera as retrições da coluna
+ALTER TABLE Youtube
+ALTER COLUMN categoria VARCHAR(300) NOT NULL
+
+
+--Esta Procedure a seguir é usada para renomear uma coluna
+EXEC sp_RENAME 'Youtube.Nome', 'Canal', 'COLUMN';
+
+
+--Esta Procedure a seguir é usada para renomear uma tabela
+EXEC sp_RENAME 'Youtube', 'YouTube2';
+
+
+--Desafio de ALterar Tabela
+SELECT *
+FROM Teste;
+
+TRUNCATE TABLE Teste  --Este comando de Truncate normalmente apaga o banco todo, mas assim apaga uma tabela
+
+--Mudando o tipo
+ALTER TABLE Teste
+ALTER COLUMN Nome FLOAT
+
+--Mudando o nome da coluna
+EXEC sp_RENAME 'Teste.Nome', 'Preço', 'COLUMN'
+
+--Mudando o nome da tabela
+EXEC sp_RENAME 'Teste', 'TestePreco'
+
+--Adicionando uma coluna
+ALTER TABLE TestePreço
+ADD Produto VARCHAR(200)
+
+--Verificando
+SELECT *
+FROM TestePreco;
+

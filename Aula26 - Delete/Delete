@@ -1,0 +1,10 @@
+--DELETE = Apaga um ou vários registros de uma tabela
+--Deletando 1 dado na tabela Aula
+SELECT *
+FROM aula;
+
+DELETE FROM Aula
+WHERE Nome = 'Gabriel';
+
+SELECT *
+FROM aula;

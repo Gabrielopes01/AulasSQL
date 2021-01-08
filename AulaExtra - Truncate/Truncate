@@ -1,0 +1,18 @@
+--TRUNCATE deleta todos os registros de uma tabela
+
+CREATE TABLE Funcionario(
+  FuncId INT PRIMARY KEY,
+  Nome VARCHAR(120) NOT NULL,
+  Cargo VARCHAR (100) NOT NULL
+);
+
+INSERT Funcionario
+VALUES
+(1, 'Gabriel', 'TI'),
+(2, 'Bianca', 'DBD'),
+(3, 'Leandro', 'Back-End');
+
+
+
+--Este comando deve ser executado:
+TRUNCATE TABLE Funcionario;

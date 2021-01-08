@@ -1,0 +1,15 @@
+--IDENTITY é a forma de se fazer um AUTO_INCREMENT na SQL Server, ele é passado como uma restrição / Constraint
+CREATE TABLE Teste(
+  Numero INT PRIMARY KEY IDENTITY, --IDENTITY é o AUTO_INCREMENT
+  Nome VARCHAR(200) NOT NULL
+);
+
+INSERT Teste
+VALUES ('OLA');  --Não passe nenhum valor para o IDENTITY
+
+INSERT Teste
+VALUES ('TCHAU');
+
+
+SELECT *
+FROM TESTE;

@@ -1,0 +1,23 @@
+--Unique faz com que não possa ser inseridos valores repitidos, pode ser inseridos em diversas colunas
+
+CREATE TABLE CarteiraMotorista(
+  Id INT PRIMARY KEY,
+  Nome VARCHAR(255) NOT NULL,
+  CPF INT UNIQUE,
+  Idade INT CHECK (Idade >= 18)
+);
+
+--Funciona
+INSERT CarteiraMotorista
+VALUES
+(1, 'Nathan', 3333, 15)
+
+--Não funciona por ser um valor repitido
+INSERT CarteiraMotorista
+VALUES
+(2, 'Rafael', 3333, 21)
+
+SELECT *
+FROM CarteiraMotorista
+
+DROP TABLE CarteiraMotorista

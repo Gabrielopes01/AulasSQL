@@ -1,0 +1,54 @@
+--INSERT INTO serve para inserir valores nas tabelas
+--Metodo de INSERT basico
+INSERT aula
+VALUES
+(1, 'Gabriel'),
+(2, 'Jorge')
+
+
+--Metodo INSERT Avançado
+INSERT INTO aula(Id, Nome)
+VALUES
+(1, 'Gabriel'),
+(2, 'Jorge')
+
+
+--Copiar valores de uma tabela a outra:
+
+SELECT * INTO AulaCopia FROM Aula;
+
+
+INSERT INTO AulaCopia
+SELECT *
+FROM Aula;
+
+
+--Desafio - Cria tabelas e insira os valores
+CREATE TABLE Funcionario(
+  FuncId INT PRIMARY KEY,
+  Nome VARCHAR(120) NOT NULL,
+  Cargo VARCHAR (100) NOT NULL
+);
+
+CREATE TABLE Pessoa(
+  PersonId INT PRIMARY KEY,
+  Nome VARCHAR(120) NOT NULL
+);
+
+
+INSERT Funcionario
+VALUES
+(1, 'Gabriel', 'TI'),
+(2, 'Bianca', 'DBD'),
+(3, 'Leandro', 'Back-End');
+
+INSERT Pessoa
+VALUES
+(4, 'Ronaldo');
+
+INSERT Pessoa
+SELECT FuncId, Nome
+FROM Funcionario;]
+
+--Criando uma nova tabela usando a tabela pessoa de base
+SELECT * INTO Cliente FROM Pessoa

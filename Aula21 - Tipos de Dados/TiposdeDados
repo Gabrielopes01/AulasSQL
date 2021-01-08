@@ -1,0 +1,25 @@
+#1 - Booleanos
+--Valores qde verdadeiro ou falso que recebe 1, 0 ou NULL
+--BIT = Valores de Booleano em forma de numero (0,1)
+
+#2 - Caracteres
+--CHAR = Usado para definir uma variável de caracteres com tamnho fixo de 50 espaços na memória
+--VARCHAR ou NVARCHAR = Permite usar tamanhos variáveis com um limite pré definido, só usando o espaço que foi definida
+
+
+#3 - Numeros
+--TINYINT = Aceita somentes valores inteiros
+--SMALLINT = O mesmo que tinyint com um limite maoir
+--INT = O mesmo que smallint com um limite maior
+--BIGINT = O mesmo que int com um limite maior
+--NUMERIC OU DECIMAL = Numeros exatos que permitem fracionados especificados e definidos - NUMERIC(5,2) 5 digitos com 2 casas depois da virgula
+
+--REAL = Precisão de até 15 dígitos depois da virgula
+--FLOAT = Mesmo conceito do REAL
+
+#4 - Temporais
+--DATE = Armazena uma data no formato (aaaa/mm/dd)
+--DATETIME = Armazena datas e horas no formato (aaaa/mm/dd hh:mm:ss)
+--SAMALLDATETIME = Armazena data e hora dentro de um limite de 1970 e 2079
+--TIME = Armazena hpras, minutos, segundos e milisegundos dentro de um limite 00:00:00.0000000
+--DATETIMEOFFSET = Permite armazenar date e hora com fuso horário

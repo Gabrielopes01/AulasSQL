@@ -1,0 +1,20 @@
+--A Constrainst NOT NULL não permite um valor ser inserido na tabela sem que você defina uma valor a ele
+CREATE TABLE CarteiraMotorista(
+  Id INT PRIMARY KEY,
+  Nome VARCHAR(255) NOT NULL,
+  Idade INT CHECK (Idade >= 18) NOT NULL
+);
+
+
+--Não funciona pois tem um valor nulo
+INSERT CarteiraMotorista
+VALUES
+(3, 23, 1)
+
+--Funciona
+INSERT CarteiraMotorista
+VALUES
+(3, 'Liriel', 23, 1)
+
+
+DROP TABLE CarteiraMotorista

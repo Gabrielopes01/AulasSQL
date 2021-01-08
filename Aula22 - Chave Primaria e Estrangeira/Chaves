@@ -1,0 +1,6 @@
+--Chave Primária é um valor único de um elemento de uma tabela que serve como identificador do mesmo, serve como índice (CONSTRAINTS)
+--Para definir uma chave primária é usado o comando PRIMARY KETY nacriação de tabela
+--CONSTRAINTS = Regras da criação de coluna de uma tabela
+
+--Chave Estrangeira são colunas que identificam um valor único em outra tabela, ou seja, é um valor que pega uma chave primária de outra
+-- assim interligando elas e seus valores como uma referência
