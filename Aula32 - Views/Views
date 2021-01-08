@@ -1,0 +1,12 @@
+--Views são tabelas virtuais onde você extrai informações de outras tabelas
+--Criando uma tabela do banco YouTube que só mostra os nomes dos Funcionarios
+CREATE VIEW NomeFuncionario AS
+SELECT Nome
+FROM Funcionario
+
+
+SELECT *
+FROM NomeFuncionario
+
+--Apagando a View
+DROP VIEW NomeFuncionario
